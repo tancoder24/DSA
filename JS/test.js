@@ -1,3 +1,3 @@
-let temp = Symbol("Tanmay Gupta")
+arr = new Array(1,2,3);
 
-console.log(eval(temp));
+console.log(arr)

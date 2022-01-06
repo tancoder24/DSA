@@ -7,7 +7,7 @@
 * 5.NaN eg - 5/"tanmay" 
 * 5.string 
 * 6.object
-* 7.symbol
+* 7.symbol - let temp = Symbol("Tanmay Gupta")
 */
 
 // variuable declaration
