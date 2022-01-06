@@ -1,11 +1,18 @@
 /* 
-  datatypes - 
-  1. number
-  2. string 
+* datatypes - 
+* 1.null
+* 2.undefined
+* 3.boolean
+* 4.number
+* 5.NaN eg - 5/"tanmay" 
+* 5.string 
+* 6.object
+* 7.symbol
 */
 
 // variuable declaration
-var a = 5;
+var a = 5, 
+    b = 8;
 let b = 6;
 const c = 7;
 

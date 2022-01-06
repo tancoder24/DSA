@@ -7,8 +7,9 @@
     5. boolean
     7. list
     8. tupple
-    9. dict
-    10. set
+    9. range
+    10. dict
+    11. set
 """
 
 # variable declaration 
