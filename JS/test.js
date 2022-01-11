@@ -1,3 +1,8 @@
-arr = new Array(1,2,3);
+let obj = {
+    fname: "tanmay",
+    lname: "gupta"
+}
 
-console.log(arr)
+let { fname, lname } =  obj ;
+
+console.log(fname, lname);

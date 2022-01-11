@@ -34,7 +34,7 @@ else :
 arr = [1,2,3]
 print(len(arr))
 
-# loops
+# loops ( only 2 types in py )
 i = 0
 while(i<1):
     print("while-else")
