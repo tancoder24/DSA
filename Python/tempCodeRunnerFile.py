@@ -7,6 +7,6 @@ import itertools
 
 count = 0
 
-for i in itertools.cycle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-  if count == 390: break
+for i in itertools.cycle("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+  if count = 390: break
   print(i, end=" ")
