@@ -1,12 +1,8 @@
-import itertools
+import itertools 
 
-# count = 0
-# for i in itertools.count(1000,500):
-#   if count == 1000: break
-#   print(i, end=" ")
+arr = [1,23,3]
 
-count = 0
+def func(value1, value2):
+  return value1*value2
 
-for i in itertools.cycle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-  if count == 390: break
-  print(i, end=" ")
+print( list(itertools.accumulate(arr, func)) )
