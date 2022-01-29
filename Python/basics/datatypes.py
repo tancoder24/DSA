@@ -47,9 +47,12 @@ print( type(i) )
 
 # dict
 j = {
-    "a" : 1
+    True: False,
+    False: "1",
+    23: 32
 }
-print( type(j) )
+
+print( type(j), j[23] )
 
 # set
 k = {"a"}

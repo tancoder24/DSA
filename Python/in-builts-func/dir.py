@@ -6,10 +6,11 @@ c = {
     "a": "1",
     "b": "2"
 }
-
 d = {"a","b"}
+e = range(3)
 
 print(dir(a))
 print(dir(b))
 print(dir(c))
 print(dir(d))
+print(dir(e))
