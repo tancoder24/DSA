@@ -1,4 +1,4 @@
-x = "                 my name is tanmay             "
+x = "                 my name is          tanmay             "
 
 a = x.strip()
 print(a)
