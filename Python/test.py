@@ -1,5 +1,5 @@
-x = " a       s!@"
+x = {}
 
-x.split()
+y = ({})
 
-print(x)
+print(type(x), type(y))

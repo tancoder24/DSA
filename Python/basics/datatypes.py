@@ -38,8 +38,11 @@ g = [1,2,3]
 print( type(g) )
 
 # tupple
-h = (1,2,3)
+h = (1,2,3) 
 print( type(h) )
+
+# To declare 1 element tuple use , and () is not necessary for tuple
+h2 = (1,) or 2,
 
 # range
 i = range(3) 
