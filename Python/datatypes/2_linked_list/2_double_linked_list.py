@@ -32,7 +32,29 @@ class DoubleLinkedList:
         self.tail = node
 
     def remove_at_index(self, index):
-        pass
+        length = self.length()
+        if index < 0 or index >= length:
+            print("index out of range")
+            return
+
+        elif index == 0:
+            self.head = self.head.next
+            self.head.prev = None
+            return
+
+        elif index == length - 1:
+            self.tail = self.tail.prev
+            self.tail.next = None
+            return
+
+        count = 0
+        itr = self.head
+        while(itr):
+            if count == index:
+                itr.next.prev, itr.prev.next = itr.prev, itr.next
+                return
+            itr = itr.next
+            count += 1        
 
     def insert_at_index(self, index, value):
         pass
@@ -69,7 +91,17 @@ class DoubleLinkedList:
         print(dllstr)
 
     def length(self):
-        pass
+        if self.head is None and self.tail is None:
+            return 0
+
+        count = 0
+        itr = self.head
+
+        while(itr):
+            count += 1
+            itr = itr.next
+
+        return count
 
 if __name__ == "__main__":
 
@@ -82,4 +114,7 @@ if __name__ == "__main__":
     dll.insert_at_end(5)
 
     dll.print_forward()
-    dll.print_backword()
+
+    dll.remove_at_index(4)
+
+    dll.print_forward()
