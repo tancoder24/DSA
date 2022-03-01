@@ -81,6 +81,21 @@ class LinkedList:
         print("Value not found")
         return
 
+    def insert_after_value(self, data_after, data_to_insert):
+        
+        if self.head is None:
+            return
+
+        itr = self.head
+
+        while(itr):
+            if itr.data == data_after:
+                itr.next = Node(data_to_insert, itr.next)
+                return
+            itr = itr.next
+
+        print("data after not found")
+
     def print(self):
         if self.head is None:
             print("Linked List empty")
@@ -110,7 +125,7 @@ if __name__ == "__main__":
     
     
     ll.insert_values([1,2,3,4,5])
-    ll.remove_value(3)
+    ll.insert_after_value(5,12)
 
     ll.print()
     print( ll.length() )
