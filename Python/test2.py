@@ -1,2 +1,11 @@
-for int(i) in input().split():
-    print(i)
+from re import X
+
+
+x = 5
+
+y = x 
+
+x = 10
+
+
+print(x, y)
