@@ -62,6 +62,25 @@ class LinkedList:
         for data in data_list:
             self.insert_at_end(data)
 
+    def remove_value(self, data):
+        if self.head == None:
+            print("Linked List empty")
+            return
+
+        elif self.head.data == data:
+            self.head = self.head.next
+            return
+
+        itr = self.head
+        while( itr.next ):
+            if itr.next.data == data:
+                itr.next = itr.next.next
+                return
+            itr = itr.next
+
+        print("Value not found")
+        return
+
     def print(self):
         if self.head is None:
             print("Linked List empty")
@@ -89,8 +108,9 @@ class LinkedList:
 if __name__ == "__main__":
     ll = LinkedList()
     
-    ll.insert_at_beginning(10)
+    
     ll.insert_values([1,2,3,4,5])
-    ll.insert_at_index(5, 14)
+    ll.remove_value(3)
+
     ll.print()
     print( ll.length() )
