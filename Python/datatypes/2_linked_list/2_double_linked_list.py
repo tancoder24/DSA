@@ -57,15 +57,61 @@ class DoubleLinkedList:
             count += 1        
 
     def insert_at_index(self, index, value):
-        pass
+        if index == 0:
+            self.insert_at_beginning(value)
+            return
+
+        elif index == self.length():
+            self.insert_at_end(value)
+            return
+
+        count = 0
+        itr = self.head
+        while(itr):
+            if count == index - 1:
+                itr.next = Node(value, itr, itr.next)
+                return
+            itr = itr.next
+            count += 1
 
     def insert_values(self, data_list):
-        pass
+        self.head = None
+        self.tail = None
+
+        for data in data_list:
+            self.insert_at_end(data)
 
     def remove_value(self, data):
-        pass
+        itr = self.head
+
+        while (itr):
+            if itr.data == data:
+                if itr.prev is None:
+                    self.head = itr.next
+                    self.head.prev = None
+                    return
+
+                elif itr.next is None:
+                    self.tail = itr.prev
+                    self.tail.next = None
+                    return
+
+                itr.prev.next, itr.next.prev = itr.next, itr.prev
+                return
+            itr = itr.next
+
+        print("value not found")
 
     def insert_after_value(self, data_after, data_to_insert):
+        # itr = self.head
+
+        # while(itr):
+        #     if itr.data == data_after:
+        #         node = Node(data_to_insert, )
+        #         return
+        #     itr = itr.next
+
+        # print(f"{data_after} not found")
         pass
 
     def print_forward(self):
@@ -96,7 +142,6 @@ class DoubleLinkedList:
 
         count = 0
         itr = self.head
-
         while(itr):
             count += 1
             itr = itr.next
@@ -115,6 +160,6 @@ if __name__ == "__main__":
 
     dll.print_forward()
 
-    dll.remove_at_index(4)
-
+    dll.insert_values([10,20,30,40,50])
+    dll.remove_value(60)
     dll.print_forward()
