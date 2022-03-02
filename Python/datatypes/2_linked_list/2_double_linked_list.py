@@ -103,16 +103,20 @@ class DoubleLinkedList:
         print("value not found")
 
     def insert_after_value(self, data_after, data_to_insert):
-        # itr = self.head
+        itr = self.head
 
-        # while(itr):
-        #     if itr.data == data_after:
-        #         node = Node(data_to_insert, )
-        #         return
-        #     itr = itr.next
+        while(itr):
+            if itr.data == data_after:
+                if itr.next == None:
+                    self.insert_at_end(data_to_insert)
+                    return
+                node = Node(data_to_insert, itr, itr.next)
+                itr.next.prev = node
+                itr.next = node
+                return
+            itr = itr.next
 
-        # print(f"{data_after} not found")
-        pass
+        print(f"{data_after} not found")
 
     def print_forward(self):
         itr = self.head
@@ -152,14 +156,7 @@ if __name__ == "__main__":
 
     dll = DoubleLinkedList()
 
-    dll.insert_at_beginning(1)
-    dll.insert_at_beginning(2)
-    dll.insert_at_beginning(3)
-    dll.insert_at_beginning(4)
-    dll.insert_at_end(5)
-
-    dll.print_forward()
-
     dll.insert_values([10,20,30,40,50])
-    dll.remove_value(60)
+    dll.insert_after_value(500,100)
+
     dll.print_forward()
