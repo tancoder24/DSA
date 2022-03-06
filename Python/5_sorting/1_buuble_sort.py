@@ -1,6 +1,3 @@
-from tabnanny import check
-
-
 def bubble_sort(elements):
     size = len(elements)
 
