@@ -1,4 +1,4 @@
-x = set([1,2])
+from asyncio.windows_events import NULL
+from contextlib import nullcontext
 
-x.update([5,6])
-print(1 in x)
+
