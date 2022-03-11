@@ -1,54 +1,42 @@
-class Node:
-    def __init__(self, val=None, next=None):
-        self.val = val
-        self.next = next
+def check_duplicy_newLang(S):
+    return not len(S) == len(set(S))
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+def convertString(S, C):
+    if check_duplicy_newLang(S):
+        return "New language Error"
 
-    def insert_at_end(self, val):
-        if self.head == None:
-            self.head = Node(val)
-            return
-        
-        itr = self.head
-        while ( itr.next):
-            itr = itr.next
+    arr = []
+    temp = []
+    new_word = ""
 
-        itr.next = Node(val)
+    for c in C:
+        if c == " ":
+            arr.append(temp)
+            temp = []
+            continue
+        elif c not in S:
+            continue
+        temp.append(S.index(c))
+    arr.append(temp)
+
+    for ar in arr:
+        ar.sort()
     
-    def add_list(self, arr):
-        for a in arr:
-            self.insert_at_end(a)
-
-    def print_list(self):
-        itr = self.head
-        while(itr.next):
-            print(itr.val)
-            itr = itr.next
-
-    def reverseList(self, itr=None):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        if head is None:
-            head = self.head
+    for ar in arr:
+        for a in ar:
+            new_word += S[a]
+        new_word += " "
         
-        arr = []
-        arr.append(head.val)
-        
+    return new_word
 
+if __name__ == "__main__":
 
-        while (head.next):
-            arr.extend(self.reverseList( head.next ))
-        return arr
+    # New Lang Sequence
+    S = "palskdjfieuryt93516247oh".lower()
 
+    # word to be transferred
+    C = "Philacodist 2021".lower()
 
-ll = LinkedList()
-ll.add_list([1,2,3,4])
+    ans = convertString(S, C)
 
-ll.reverseList()
-# ll.print_list()
-
+    print(ans, end="")
