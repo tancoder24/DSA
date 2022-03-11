@@ -1,4 +1,8 @@
-from asyncio.windows_events import NULL
-from contextlib import nullcontext
+def temp(s,z = len(s)):
+    print(z)
+
+a = "As"
+
+temp(a, len(a))
 
 
