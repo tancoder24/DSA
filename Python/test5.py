@@ -1,5 +1,3 @@
-arr = [1,2,43]
+x = list(range(5,10)) + list(range(0,5))
 
-arr.pop(0)
-
-print(arr)
+print(x)
