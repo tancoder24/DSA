@@ -1,6 +1,8 @@
 """
 This is for only learning purpose, how hash works behind schene
 while programming we use dict
+
+collision not handled
 """
 
 class HashTable:
