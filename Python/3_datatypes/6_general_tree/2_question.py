@@ -8,8 +8,9 @@ class TreeNode:
         node.parent = self
         self.children.append(node)
 
-    def print_tree(self, type):
+    def print_tree(self, type, max_level):
         level = self.get_level()
+        if level > max_level: return
         if level:
             print( "   "*level + "|__", end="" )
         
@@ -21,7 +22,7 @@ class TreeNode:
             print(f"({self.data[1]})")
 
         for child in self.children:
-            child.print_tree(type)
+            child.print_tree(type, max_level)
 
     def get_level(self):
         level = 0
@@ -64,4 +65,4 @@ def build_management_tree():
 
 if __name__ == "__main__":
     root = build_management_tree()
-    root.print_tree("both")
+    root.print_tree("both", 0)
