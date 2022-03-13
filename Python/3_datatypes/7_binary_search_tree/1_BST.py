@@ -19,6 +19,31 @@ class BinarySearchTreeNode:
                 return
             self.right.add_node(val)
 
+    def delete(self, val):
+        if val < self.data and self.left:
+            self.left = self.left.delete(val)
+        elif self.data < val and self.right:
+            self.right = self.right.delete(val)
+
+        elif val == self.data:
+            if self.left is None and self.right is None:
+                return None
+            if self.left is None:
+                return self.right
+            if self.right is None:
+                return self.left
+
+            max_value = self.left.find_max()
+            self.data = max_value
+            self.left = self.left.delete(max_value)
+
+            # 1st Way
+            # min_value = self.right.find_min()
+            # self.data = min_value
+            # self.right = self.right.delete(min_value)
+
+        return self 
+
     def search_tree(self, val):
         if self.data == val:
             return True
@@ -33,16 +58,14 @@ class BinarySearchTreeNode:
             return False
 
     def find_min(self):
-        itr = self
-        while(itr.left):
-            itr = itr.left
-        return itr.data
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
 
     def find_max(self):
-        itr = self
-        while(itr.right):
-            itr = itr.right
-        return itr.data
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
     
     def calculate_sum(self):
         elements = self.inorder_traversal()
@@ -100,3 +123,6 @@ if __name__ == "__main__":
     print( bst.find_min() )
     print( bst.find_max() )
     print( bst.calculate_sum() )
+
+    bst.delete(88)
+    print( bst.inorder_traversal() )
