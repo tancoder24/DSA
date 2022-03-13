@@ -1,3 +1,6 @@
-x = list(range(5,10)) + list(range(0,5))
+a = 3
+b =23
+
+x = [a,b]
 
 print(x)
