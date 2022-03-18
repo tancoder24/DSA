@@ -124,5 +124,6 @@ if __name__ == "__main__":
     print( bst.find_max() )
     print( bst.calculate_sum() )
 
+    # delete value
     bst.delete(88)
     print( bst.inorder_traversal() )
