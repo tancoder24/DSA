@@ -1,1 +1,1 @@
-print( min(4,-1) )
+s = set()
