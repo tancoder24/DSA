@@ -1,1 +1,1 @@
-s = set()
+print( [None]*5 )
