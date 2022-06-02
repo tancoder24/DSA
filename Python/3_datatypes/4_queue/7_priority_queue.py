@@ -41,3 +41,12 @@ print(heapq.nlargest(3, li))
 print("The 3 smallest numbers in list are : ",end="")
 print(heapq.nsmallest(3, li))
 print()
+
+# nlargest key
+def func(ans):
+    if ans+2 > 100:
+        return True
+    return False
+
+x = heapq.nlargest(1, li, func)
+print(x)
