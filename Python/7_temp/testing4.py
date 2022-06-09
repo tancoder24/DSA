@@ -1,1 +1,5 @@
-print( [None]*5 )
+x = ["Tanmay", "Gupta", "JAI"]
+
+x[:2] = ["Na", "na"]
+
+print(x)
