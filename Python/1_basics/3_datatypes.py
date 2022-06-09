@@ -1,5 +1,15 @@
 """
     datatypes
+    
+    Text Type:	str
+    Numeric Types:	int, float, complex
+    Sequence Types:	list, tuple, range
+    Mapping Type:	dict
+    Set Types:	set, frozenset
+    Boolean Type:	bool
+    Binary Types:	bytes, bytearray, memoryview
+    None Type:	NoneType
+    
     1. int
     2. float
     3. complex
@@ -13,18 +23,19 @@
 """
 
 # int
-a = int(5)
+a = int(-5)
 a = 5
 print( type(a) )
 
 # float
 b = float(6.0)
 b = 6.0
+b = 6e5             # e to show power of 10
 print( type(b) )
 
 # complex
 c = complex(4 + 2j)
-c = 4 + 2j
+c = 4 + 2j          # j to show imaginary part 
 print( type(c) )
 
 # string
@@ -59,6 +70,7 @@ i = range(3)
 print( type(i) )
 
 # dict
+j = dict(fname="tanmay", lname="gupta")
 j = {
     True: False,
     False: "1",
@@ -68,5 +80,6 @@ j = {
 print( type(j), j[23] )
 
 # set
+k = set(("a", "b"))
 k = {"a"}
 print( type(k) )
