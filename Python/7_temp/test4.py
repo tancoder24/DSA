@@ -1,7 +1,4 @@
-fruits = ("apple", "banana", "cherry")
+def func( **args ):
+    print(args)
 
-green, yellow, red = fruits
-
-print(green)
-print(yellow)
-print(red)
+func(a=1,b=2,c=3)
