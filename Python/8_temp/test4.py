@@ -1,12 +1,3 @@
-class temp:
-    def __init__(self) :
-        self.name = "Tanmay"
+import keyword
 
-class now(temp):
-    def show(self):
-        print(self.name)
-
-
-n = now()
-
-print(n.show())
+print( keyword.kwlist, keyword.softkwlist )
