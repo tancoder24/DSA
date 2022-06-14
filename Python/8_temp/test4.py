@@ -1,4 +1,12 @@
-def func( **args ):
-    print(args)
+class temp:
+    def __init__(self) :
+        self.name = "Tanmay"
 
-func(a=1,b=2,c=3)
+class now(temp):
+    def show(self):
+        print(self.name)
+
+
+n = now()
+
+print(n.show())

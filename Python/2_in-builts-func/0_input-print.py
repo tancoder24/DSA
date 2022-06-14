@@ -18,3 +18,6 @@ for i in a:
 
 for i in a: 
     print(i, end="$")
+
+print()
+print("Tanmay", "Gupta", 20, sep="#")
