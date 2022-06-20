@@ -1,5 +1,5 @@
+# insert at 0 and pop at -1
 letters = []
-
 letters.insert(0, "A")
 letters.insert(0, "B")
 letters.insert(0, "C")
@@ -8,15 +8,12 @@ letters.insert(0, "E")
 letters.insert(0, "F")
 
 print(letters)
-
 print( letters.pop() )
 print( letters.pop() )
 print( letters.pop() )
 
-# either insert at 0 or pop at 0
-
+# insert at -1 and pop at 0
 numbers = []
-
 numbers.append(1)
 numbers.append(2)
 numbers.append(3)

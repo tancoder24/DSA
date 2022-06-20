@@ -1,5 +1,6 @@
 from collections import deque
-
+###############################################################################
+# append left and pop right
 myqueue = deque()
 
 myqueue.appendleft("A")
@@ -11,23 +12,15 @@ myqueue.extendleft([1,23,4])
 print( myqueue.pop() )
 print( myqueue[0] )
 
-# OR
+###############################################################################
+# append right and pop left
+q = deque() 
 
-q = deque()
-  
-# Adding elements to a queue
 q.append('a')
 q.append('b')
 q.append('c')
-  
-print("Initial queue")
-print(q)
-  
-# Removing elements from a queue
+
 print("\nElements dequeued from the queue")
 print(q.popleft())
 print(q.popleft())
 print(q.popleft())
-  
-print("\nQueue after removing elements")
-print(q)

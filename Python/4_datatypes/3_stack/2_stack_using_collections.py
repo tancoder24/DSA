@@ -21,3 +21,5 @@ print(f"length -> {len(stack)}")
 
 print( stack )
 
+print()
+print(dir( stack ))
