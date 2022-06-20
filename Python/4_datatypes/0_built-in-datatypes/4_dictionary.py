@@ -1,3 +1,7 @@
+# key of the dictionary is always immutable whereas value can be both mutable and immutable
+# immutable in python - Integers Float Booleans Strings Tuples
+# mutable in python - Lists Dictionaries Sets
+
 thisdict = {
   "brand": "Ford",
   "model": "Mustang",

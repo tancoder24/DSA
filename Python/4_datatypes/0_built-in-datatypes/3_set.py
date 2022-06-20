@@ -1,3 +1,7 @@
+# set can have only immutable objects as elemnets
+# immutable in python - Integers Float Booleans Strings Tuples
+# mutable in python - Lists Dictionaries Sets
+
 # basics
 set1 = {1,2,3}
 

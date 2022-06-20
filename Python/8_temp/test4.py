@@ -1,3 +1,4 @@
-import keyword
+s = {1,2,3,4}
 
-print( keyword.kwlist, keyword.softkwlist )
+for i in s:
+    print(i)
