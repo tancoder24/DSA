@@ -1,1 +1,3 @@
-print( None < 3 )
+c = "tanmay"
+
+print( '\0' in c )
