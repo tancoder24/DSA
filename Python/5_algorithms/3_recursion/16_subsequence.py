@@ -1,6 +1,6 @@
 def subsequence(s):
     # 1. base case where recurrsion stops
-    if len(s) == 1:
+    if len(s) <= 1:
         return ["", s[0]]
     
     # 2. recurrsion calls
