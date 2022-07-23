@@ -1,2 +1,7 @@
-print(sum( [[1,2,3],[1,2,3]],[1,2] ))
+def temp(x):
+    print(x)
+
+x = "abc"
+
+temp(x[1:])
             
