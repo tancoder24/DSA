@@ -1,50 +1,49 @@
-# def hoare_quick_sort(arr):
-#     pivot = 0
-#     start = 1
-#     end = len(arr) - 1
+def swap(arr, i, j):
+    arr[i], arr[j] = arr[j], arr[i]
 
-#     while(start < len(arr)):
-#         if arr[start] > arr[pivot]:
-#             while(end >= start):
-#                 if arr[end] < arr[pivot]:
-#                     arr[start], arr[end] = arr[end], arr[start] 
-#                     break
-#                 end -= 1
-#             else: 
-#                 arr[end], arr[pivot] = arr[pivot], arr[end]
-#                 leftArr = hoare_quick_sort(arr[0: end])
-#                 rightArr = hoare_quick_sort(arr[end+1:])
-#                 arr = leftArr + [arr[end]] + rightArr
-#                 return arr
-#         start += 1
+def quick_sort(elements, start, end):
 
-def swap(a, b, arr):
-    if a != b:
-        arr[a], arr[b] = arr[b], arr[a]
+    # 1. base case 
+    if start >= end :
+        return 
 
-def partition(elements):
-    pivot_index = 0
-    pivot = elements[pivot_index]
+    # 2. Calculations
+    pivot = elements[start]
+    smaller =  0
+    
+    for element in elements[start: end+1]:
+        if element < pivot:
+            smaller += 1
+    swap(elements, start+smaller, start)
 
-    start = pivot_index + 1
-    end = len(elements) - 1
+    i = start
+    j = end
+    while i < j:
+        if elements[i] < pivot and elements[j] > pivot:
+            i += 1
+            j -= 1
+        elif elements[i] > pivot and elements[j] < pivot:
+            swap(elements, i, j)
+            i += 1
+            j -= 1
+        elif elements[i] > pivot:
+            j -= 1
+        else:
+            i += 1    
 
-    while start < end:
-        while ( elements[start] <= pivot ):
-            start += 1
-
-        while ( elements[end] > pivot ):
-            end -= 1
-
-        if start < end:
-            swap(start, end, elements)
-
-    swap(pivot_index, end, elements)
-
-def quick_sort(elements):
-    partition(elements)
+    # 3. recurrsive calls
+    quick_sort(elements, start, start+smaller-1)
+    quick_sort(elements, start+smaller+1, end)
 
 if __name__ == "__main__":
-    arr = [11, 9, 29, 7, 2, 15, 28]
-    quick_sort(arr) 
-    print(arr)
+    arr1 = [11, 9, 29, 7, 2, 15, 28]
+    print(arr1)
+    quick_sort(arr1, 0, 6) 
+    print(arr1)
+
+    print()
+
+    arr2 = [11, 9, 29, 7, 2, 15, 28, -1]
+    print(arr2)
+    quick_sort(arr2, 0, 7)
+    print(arr2) 
