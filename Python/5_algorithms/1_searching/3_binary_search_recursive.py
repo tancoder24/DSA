@@ -29,4 +29,3 @@ if __name__ == "__main__":
     arr = [100, 11, 9, 29, 7, 5, 2, 15, 28]
     arr.sort()
     bin_search(100, arr, 0 , 8) 
-            
